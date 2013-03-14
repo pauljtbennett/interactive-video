@@ -1,0 +1,110 @@
+/* Begin Typography */
+
+@include font-face("entypo", font-files("entypo.woff", woff, "entypo.otf", opentype), "entypo.eot");
+
+::selection{ background-color: $highlightColor; color: #fff; }
+::-moz-selection{ background-color: $highlightColor; color: #fff; }
+
+::-webkit-input-placeholder  { color: lighten($bodyFontColor, 35%); -webkit-font-smoothing: antialiased; }
+input:-moz-placeholder { color: lighten($bodyFontColor, 35%); }
+
+body {
+	@include body-font;
+
+	color: $bodyFontColor;
+
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	@include header-font;
+
+	color: $headerFontColor;
+	line-height: 1.25em;
+	text-rendering: optimizeLegibility;
+}
+
+h1 { font-size: 2.2em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.5em; }
+h5 {}
+h6 {}
+
+p {
+	margin-bottom: 10px;
+	font-size: 1.3em;
+	line-height: 1.1em;
+
+	&:last-child {
+		// margin-bottom: 0;		
+	}
+}
+
+a {
+	color: $linkColor;
+	text-decoration: none;
+
+	@include transition(all 0.15s);
+
+	&:hover {
+		color: $linkHoverColor;
+	}
+}
+
+em {}
+strong, b {
+	font: {
+		family: $headerFontFamily;
+		weight: $headerFontWeight;
+	}
+}
+
+sup,
+sub {
+	height: 0;
+	line-height: 1;
+	vertical-align: baseline;
+	position: relative;
+	font-size: 0.8em;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: .5ex;
+}
+
+.main {
+	h1, h2, h3, h4, h5, h6 {
+		margin: 10px 0;
+	}
+
+	p, ul, ol, table {
+		font-size: 1.3em;
+	}
+
+	p {
+		line-height: 1.35em;
+	}
+
+	ul, ol {
+		margin: 10px 0;
+
+		li {
+			margin-left: 20px;
+		}
+	}
+
+	ul {
+		li { list-style-type: disc; }
+	}
+
+	ol {
+		li { list-style-type: decimal; }
+	}
+}
+
+/* End Typography */

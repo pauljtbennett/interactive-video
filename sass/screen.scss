@@ -1,0 +1,21 @@
+@import "compass/css3";
+@import "compass/reset";
+
+@import "susy";
+
+@import "_settings";
+
+@import "includes/_grid";
+@import "includes/_typography";
+@import "includes/_video";
+@import "includes/_misc";
+
+/* Begin Structure */
+
+body {
+	background: $bodyBackgroundColor;
+}
+
+.main {
+	margin-top: 150px;
+}

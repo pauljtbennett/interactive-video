@@ -1,0 +1,140 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
+
+html { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
+
+q, blockquote { quotes: none; }
+q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
+
+a img { border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { display: block; }
+
+/* Begin Grid */
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.row { *zoom: 1; max-width: 960px; _width: 960px; padding-left: 10px; padding-right: 10px; margin-left: auto; margin-right: auto; }
+.row:after { content: ""; display: table; clear: both; }
+.row .row { margin-left: -10px; }
+.row .column { width: 100%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.half.one, .row .column.halves.one { width: 48.93617%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.half.two, .row .column.halves.two { width: 100%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.third.one, .row .column.thirds.one { width: 31.91489%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.third.two, .row .column.thirds.two { width: 65.95745%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.third.three, .row .column.thirds.three { width: 100%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.quarter.one, .row .column.quarters.one { width: 23.40426%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.quarter.two, .row .column.quarters.two { width: 48.93617%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.quarter.three, .row .column.quarters.three { width: 74.46809%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.quarter.four, .row .column.quarters.four { width: 100%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.fifth.one, .row .column.fifths.one { width: 19.57447%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.fifth.two, .row .column.fifths.two { width: 39.14894%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.fifth.three, .row .column.fifths.three { width: 60.85106%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.fifth.four, .row .column.fifths.four { width: 80.42553%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.fifth.five, .row .column.fifths.five { width: 100%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.sixth.one, .row .column.sixths.one { width: 14.89362%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.sixth.two, .row .column.sixths.two { width: 31.91489%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.sixth.three, .row .column.sixths.three { width: 48.93617%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.sixth.four, .row .column.sixths.four { width: 65.95745%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.sixth.five, .row .column.sixths.five { width: 82.97872%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column.sixth.six, .row .column.sixths.six { width: 100%; float: left; margin-right: 2.12766%; display: inline; }
+.row .column:last-child { float: right; margin-right: 0; #margin-left: -20px; display: inline; }
+@media (max-width: 480px) { .row .column.half.one, .row .column.half.two, .row .column.half.three, .row .column.half.four, .row .column.half.five, .row .column.half.six, .row .column.halves.one, .row .column.halves.two, .row .column.halves.three, .row .column.halves.four, .row .column.halves.five, .row .column.halves.six, .row .column.third.one, .row .column.third.two, .row .column.third.three, .row .column.third.four, .row .column.third.five, .row .column.third.six, .row .column.thirds.one, .row .column.thirds.two, .row .column.thirds.three, .row .column.thirds.four, .row .column.thirds.five, .row .column.thirds.six, .row .column.quarter.one, .row .column.quarter.two, .row .column.quarter.three, .row .column.quarter.four, .row .column.quarter.five, .row .column.quarter.six, .row .column.quarters.one, .row .column.quarters.two, .row .column.quarters.three, .row .column.quarters.four, .row .column.quarters.five, .row .column.quarters.six, .row .column.fifth.one, .row .column.fifth.two, .row .column.fifth.three, .row .column.fifth.four, .row .column.fifth.five, .row .column.fifth.six, .row .column.fifths.one, .row .column.fifths.two, .row .column.fifths.three, .row .column.fifths.four, .row .column.fifths.five, .row .column.fifths.six, .row .column.sixth.one, .row .column.sixth.two, .row .column.sixth.three, .row .column.sixth.four, .row .column.sixth.five, .row .column.sixth.six, .row .column.sixths.one, .row .column.sixths.two, .row .column.sixths.three, .row .column.sixths.four, .row .column.sixths.five, .row .column.sixths.six { width: 100%; float: left; margin-right: 9.09091%; float: right; margin-right: 0; } }
+.row .column.half:last-child, .row .column.halves:last-child, .row .column.third:last-child, .row .column.thirds:last-child, .row .column.quarter:last-child, .row .column.quarters:last-child, .row .column.fifth:last-child, .row .column.fifths:last-child, .row .column.sixth:last-child, .row .column.sixths:last-child { float: right; margin-right: 0; #margin-left: -20px; display: inline; }
+
+/* End Grid */
+/* Begin Typography */
+@font-face { font-family: "entypo"; src: url('../fonts/entypo.eot'); src: url('../fonts/entypo.eot?#iefix') format('eot'), url('../fonts/entypo.woff') format('woff'), url('../fonts/entypo.otf') format('opentype'); }
+
+::selection { background-color: #bf2534; color: #fff; }
+
+::-moz-selection { background-color: #bf2534; color: #fff; }
+
+::-webkit-input-placeholder { color: #8c8c8c; -webkit-font-smoothing: antialiased; }
+
+input:-moz-placeholder { color: #8c8c8c; }
+
+body { font-family: "PT Sans", sans-serif; font-weight: normal; font-size: 10px; color: #333333; -webkit-font-smoothing: antialiased; }
+
+h1, h2, h3, h4, h5, h6 { font-family: "PT Sans", sans-serif; font-weight: bold; color: #333333; line-height: 1.25em; text-rendering: optimizeLegibility; }
+
+h1 { font-size: 2.2em; }
+
+h2 { font-size: 2.2em; }
+
+h3 { font-size: 1.8em; }
+
+h4 { font-size: 1.5em; }
+
+p { margin-bottom: 10px; font-size: 1.3em; line-height: 1.1em; }
+
+a { color: #bf2534; text-decoration: none; -webkit-transition: all 0.15s; -moz-transition: all 0.15s; -o-transition: all 0.15s; transition: all 0.15s; }
+a:hover { color: #bf2534; }
+
+strong, b { font-family: "PT Sans", sans-serif; font-weight: bold; }
+
+sup, sub { height: 0; line-height: 1; vertical-align: baseline; position: relative; font-size: 0.8em; }
+
+sup { bottom: 1ex; }
+
+sub { top: .5ex; }
+
+.main h1, .main h2, .main h3, .main h4, .main h5, .main h6 { margin: 10px 0; }
+.main p, .main ul, .main ol, .main table { font-size: 1.3em; }
+.main p { line-height: 1.35em; }
+.main ul, .main ol { margin: 10px 0; }
+.main ul li, .main ol li { margin-left: 20px; }
+.main ul li { list-style-type: disc; }
+.main ol li { list-style-type: decimal; }
+
+/* End Typography */
+/* Begin Video Skin */
+video { max-width: 960px; width: 100%; height: auto; margin-left: -10px; }
+
+.video-skin { position: relative; overflow: hidden; }
+.video-skin .vjs-poster { position: absolute; top: 0; left: 0; z-index: 20; }
+.video-skin .vjs-controls { padding: 15px 10px; background: #fff; }
+.video-skin .vjs-controls > div { display: block; margin-right: 10px; }
+.video-skin .vjs-controls > div .vjs-control-text { font-family: "entypo"; display: inline-block; text-indent: -9999px; line-height: 0; }
+.video-skin .vjs-controls > div .vjs-control-text:after { display: block; margin-top: -5px; font-size: 2.4em; text-indent: 0; line-height: 0; outline: none; cursor: pointer; }
+.video-skin .vjs-controls > div:last-child { margin-right: 0; }
+.video-skin .vjs-controls > div.vjs-progress-control { width: 91.48936%; float: left; margin-right: 2.12766%; display: inline; float: right; margin-right: 0; #margin-left: -20px; display: inline; }
+@media (max-width: 480px) { .video-skin .vjs-controls > div.vjs-progress-control { width: 390.90909%; float: left; margin-right: 9.09091%; float: left; margin-right: 9.09091%; max-width: 240px; } }
+.video-skin .vjs-controls > div.vjs-progress-control .vjs-progress-holder { position: relative; width: 100%; height: 11px; }
+.video-skin .vjs-controls > div.vjs-progress-control .vjs-progress-holder > div { position: absolute; top: 0; left: 0; height: 1px; }
+.video-skin .vjs-controls > div.vjs-progress-control .vjs-progress-holder > div.vjs-load-progress { top: 5px; background: #ddd; }
+.video-skin .vjs-controls > div.vjs-progress-control .vjs-progress-holder > div.vjs-play-progress { height: 11px; border-right: 3px solid #bf2534; background: -webkit-gradient(linear, 50% 0%, 50% 7, color-stop(0%, #ffffff), color-stop(57.14286%, #ffffff), color-stop(57.14286%, #333333), color-stop(100%, #333333), color-stop(100%, #ffffff)); background: -webkit-linear-gradient(#ffffff, #ffffff 4px, #333333 4px, #333333 7px, #ffffff 7px); background: -moz-linear-gradient(#ffffff, #ffffff 4px, #333333 4px, #333333 7px, #ffffff 7px); background: -o-linear-gradient(#ffffff, #ffffff 4px, #333333 4px, #333333 7px, #ffffff 7px); background: linear-gradient(#ffffff, #ffffff 4px, #333333 4px, #333333 7px, #ffffff 7px); }
+.video-skin .vjs-controls > div.vjs-progress-control .vjs-progress-holder > div span { display: none; }
+.video-skin .vjs-controls > div.vjs-progress-control .vjs-progress-holder .progress-point { position: absolute; display: inline-block; padding: 0 1px 0 2px; font-family: "entypo"; font-size: 3em; font-weight: bold; color: #ddd; background: #fff; line-height: 12px; }
+.video-skin .vjs-controls > div.vjs-play-control { width: 6.38298%; float: left; margin-right: 2.12766%; display: inline; margin-top: 10px; }
+@media (max-width: 480px) { .video-skin .vjs-controls > div.vjs-play-control { width: 27.27273%; float: left; margin-right: 9.09091%; float: right; margin-right: 0; max-width: 240px; } }
+.video-skin .vjs-controls > div.vjs-play-control > div { text-align: center; }
+.video-skin .vjs-controls > div.vjs-play-control .vjs-control-text:after { content: "\25B6"; }
+.video-skin .vjs-controls > div.vjs-play-control.vjs-playing .vjs-control-text:after { content: "\2016"; }
+.video-skin .vjs-controls > div.vjs-current-time, .video-skin .vjs-controls > div.vjs-time-divider, .video-skin .vjs-controls > div.vjs-duration, .video-skin .vjs-controls > div.vjs-remaining-time, .video-skin .vjs-controls > div.vjs-volume-control, .video-skin .vjs-controls > div.vjs-mute-control { display: none; }
+.video-skin .point { position: absolute; width: 22px; height: 22px; padding-left: 1px; background: #fff; border: 1px solid #eeeeee; font-family: "entypo"; font-size: 3em; font-weight: bold; text-align: center; line-height: 21px; color: #777; -webkit-border-radius: 11px; -moz-border-radius: 11px; -ms-border-radius: 11px; -o-border-radius: 11px; border-radius: 11px; }
+.video-skin .point:hover { color: #bf2534; }
+.video-skin .popup { position: absolute; top: 10px; right: 10px; width: 250px; height: 380px; padding: 15px; color: #fff; background: rgba(0, 0, 0, 0.8); font-size: 2.2em; font-weight: bold; text-transform: uppercase; }
+.video-skin .popup .btn { display: block; margin-top: 15px; background: white; color: #000; padding: 8px; font-size: 0.75em; text-align: center; }
+.video-skin .countdown { position: absolute; top: 0; left: 0; width: 940px; height: 2px; }
+.video-skin .countdown .bar { position: absolute; bottom: 0; width: 0; height: 2px; background: #bf2534; }
+
+.overlay { display: none; position: absolute; width: 100%; height: 500px; background: #fff; top: 0; left: 0; z-index: 20; }
+
+/* End Video Skin */
+.left { float: left; }
+
+.right { float: right; }
+
+.clear { clear: both; }
+
+.hidden { display: none; }
+
+/* Begin Structure */
+body { background: white; }
+
+.main { margin-top: 150px; }

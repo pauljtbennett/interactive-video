@@ -1,0 +1,51 @@
+// Colors Settings
+
+$color1: #bf2534;
+$color2: #694682;
+$color3: #c4a7dd;
+$color4: #000000;
+$color5: #fff;
+
+$bodyBackgroundColor: $color5;
+$sidebarBackgroundColor: #1c1d22;
+$headerBackgroundColor: $color1;
+
+$primaryColor: #333;
+
+$highlightColor: $color1;
+$linkColor: $highlightColor;
+$linkHoverColor: $color1;
+
+// Font Settings
+
+$headerFontFamily: 'PT Sans', sans-serif;
+$headerFontWeight: bold;
+$headerFontColor: $primaryColor;
+
+$bodyFontFamily: 'PT Sans', sans-serif;
+$bodyFontWeight: normal;
+$bodyFontSize: 10px;
+$bodyFontColor: $primaryColor;
+
+@mixin header-font {
+	font-family: $headerFontFamily;
+	font-weight: $headerFontWeight;
+}
+
+@mixin body-font {
+	font-family: $bodyFontFamily;
+	font-weight: $bodyFontWeight;
+	font-size: $bodyFontSize;
+}
+
+// Susy settings
+
+$base-font-size: $bodyFontSize;
+
+$total-columns: 12;  // a 12-column grid
+$column-width: 60px; // each column is 4em wide
+$gutter-width: 20px; // 1em gutters between columns
+$grid-padding: 10px; // grid-padding equal to gutters
+
+$mobile: 3 480px;
+$tablet: 6 768px;

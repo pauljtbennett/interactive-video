@@ -1,0 +1,202 @@
+/* Begin Video Skin */
+
+video {
+	max-width: 960px;
+	width: 100%;
+	height: auto;
+	margin-left: -10px; // Hacky way of removing dodgy crop bars :P
+}
+
+.video-skin {
+	position: relative;
+	overflow: hidden;
+
+	.vjs-poster {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 20;
+	}
+
+	.vjs-controls {
+		padding: 15px 10px;
+		background: #fff;
+
+		> div {
+			display: block;
+			margin-right: 10px;
+
+			.vjs-control-text {
+				font-family: "entypo";
+				display: inline-block;
+				text-indent: -9999px;
+				line-height: 0;
+
+				&:after {
+					display: block;
+					margin-top: -5px;
+					font-size: 2.4em;
+					text-indent: 0;
+					line-height: 0;
+					outline: none;
+					cursor: pointer;					
+				}
+			}			
+
+			&:last-child { margin-right: 0; }
+
+			&.vjs-progress-control {
+				@include span-columns(11);
+				@include omega;
+				@include at-breakpoint($mobile) {
+					@include span-columns(11);
+					@include remove-omega;
+					@include set-container-width;
+				}
+
+				.vjs-progress-holder {
+					position: relative;
+					width: 100%;
+					height: 11px;
+
+					> div {
+						position: absolute;
+						top: 0;
+						left: 0;
+						height: 1px;
+
+						&.vjs-load-progress {
+							top: 5px;
+							background: #ddd;
+						}
+
+						&.vjs-play-progress {
+							height: 11px;
+							border-right: 3px solid $color1;
+
+							@include background(linear-gradient(color-stops(#fff, #fff 4px, #333 4px, #333 7px, #fff 7px)));
+						}
+
+						span { display: none; }
+					}
+
+					.progress-point {
+						position: absolute;
+						display: inline-block;
+						padding: 0 1px 0 2px;
+						font-family: "entypo";
+						font-size: 3em;
+						font-weight: bold;
+						color: #ddd;
+						background: #fff;
+						line-height: 12px;
+					}					
+				}
+			}
+
+			&.vjs-play-control {
+				@include span-columns(1);
+				@include at-breakpoint($mobile) {
+					@include span-columns(1);
+					@include omega;
+					@include set-container-width;
+				}
+
+				margin-top: 10px;
+
+				> div { text-align: center; }
+
+				.vjs-control-text {
+					&:after { content: "\25B6"; }
+				}
+
+				&.vjs-playing {
+					.vjs-control-text {
+						&:after { content: "\2016"; }
+					}
+				}
+			}
+
+			&.vjs-current-time,
+			&.vjs-time-divider,
+			&.vjs-duration,
+			&.vjs-remaining-time,
+			&.vjs-volume-control,
+			&.vjs-mute-control {
+				display: none;
+			}
+		}
+	}
+
+	.point {
+		position: absolute;
+		width: 22px;
+		height: 22px;
+		padding-left: 1px;
+		background: #fff;
+		border: 1px solid #eee;
+		font-family: "entypo";
+		font-size: 3em;
+		font-weight: bold;
+		text-align: center;
+		line-height: 21px;
+		color: #777;
+
+		@include border-radius(11px);
+
+		&:hover { color: $color1; }
+	}
+
+	.popup {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		width: 250px;
+		height: 380px;
+		padding: 15px;
+		color: #fff;
+		background: rgba(0, 0, 0, 0.8);
+		font-size: 2.2em;
+		font-weight: bold;
+		text-transform: uppercase;
+
+		.btn {
+			display: block;
+			margin-top: 15px;
+			background: white;
+			color: #000;
+			padding: 8px;
+			font-size: 0.75em;
+			text-align: center; 
+		}
+	}
+
+	.countdown {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 940px;
+		height: 2px;
+
+		.bar {
+			position: absolute;
+			bottom: 0;
+			width: 0;
+			height: 2px;
+			background: $color1;
+		}
+	}
+}
+
+.overlay {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 500px;
+	background: #fff;
+	top: 0;
+	left: 0;
+	z-index: 20;
+}
+
+/* End Video Skin */
