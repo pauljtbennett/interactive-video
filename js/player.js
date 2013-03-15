@@ -4,12 +4,15 @@ _V_("video").ready(function(){
 	var duration = false;
 	var in_section = false;
 
+	var width = $('.vjs-tech').width();
+	var height = $('.vjs-tech').height();	
+
 	var delay = 8000;
 	var count = delay;
 	var counter;
 
 	var snd = new Audio("audio/camera.mp3");
-	
+
 	snd.volume = 0.5;
 
 	$.ajax({
@@ -41,16 +44,19 @@ _V_("video").ready(function(){
 		killCountdown();
 		cameraFlash();
 		player.pause();
-			in_section = s.from;
+		in_section = s.from;
 
 		$.each(s.points, function(j, p){
 			if ($('#point-' + p.id).length == 0) {
 				$('#video').append('<a href="#" class="point" id="point-' + p.id + '" data-popup="popup-' + p.id + '">&#10133;</a>');
 				$('#video').append('<div class="popup" id="popup-' + p.id + '"></div>');
 
+				var pos_bottom = 100 - Math.abs((p.y / height) * 100);
+				var pos_left = Math.abs((p.x / width) * 100);
+
 				$('#point-' + p.id).css({
-					top: p.y,
-					left: p.x
+					bottom: pos_bottom + '%',
+					left: pos_left + '%'
 				});
 
 				$('#popup-' + p.id).html(p.name).hide();
@@ -188,7 +194,7 @@ _V_("video").ready(function(){
 	$('#video .vjs-play-control').wrap('<div class="vjs-direction-control" />');
 	$('#video .vjs-play-control').before('<div class="vjs-prev-control"><div><span class="vjs-control-text">Previous</span></div></div>');
 	$('#video .vjs-play-control').after('<div class="vjs-next-control"><div><span class="vjs-control-text">Next</span></div></div>');
-	
+
 	$('#video').append('<div class="overlay"></div>');
 	$('#video').on('click', '.point', function(e){
 		e.preventDefault();
