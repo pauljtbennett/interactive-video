@@ -2,6 +2,7 @@ _V_("video").ready(function(){
 	var player = this;
 	var points_data;
 	var duration = false;
+	var in_section = false;
 
 	var delay = 8000;
 	var count = delay;
@@ -26,7 +27,91 @@ _V_("video").ready(function(){
 		}
 	});
 
-	var in_section = false;
+	var compareSections = function(a, b){
+		if (a.from < b.from)
+			return -1;
+		if (a.from > b.from)
+			return 1;
+		return 0;
+	};
+
+	points_data = points_data.sort(compareSections);	
+
+	var enterSection = function(s){
+		killCountdown();
+		cameraFlash();
+		player.pause();
+			in_section = s.from;
+
+		$.each(s.points, function(j, p){
+			if ($('#point-' + p.id).length == 0) {
+				$('#video').append('<a href="#" class="point" id="point-' + p.id + '" data-popup="popup-' + p.id + '">&#10133;</a>');
+				$('#video').append('<div class="popup" id="popup-' + p.id + '"></div>');
+
+				$('#point-' + p.id).css({
+					top: p.y,
+					left: p.x
+				});
+
+				$('#popup-' + p.id).html(p.name).hide();
+				$('#popup-' + p.id).append('<a class="btn" href="#">Buy</a>');
+			}
+		});
+
+		$('.video-skin').append('<span class="countdown"><span class="bar"></span></span>');
+
+		counter = setInterval(timer, 25);
+	};
+
+	var inSection = function(s){
+
+	};
+
+	var leaveSection = function(s){
+		in_section = false;
+
+		$('.point').fadeOut(150, function(){
+			$(this).remove();
+		});
+	};
+
+	var jumpToSection = function(s){
+		player.currentTime(s.from / 1000);
+		enterSection(s);
+	};
+
+	var nextSection = function(){
+		var sections = points_data;
+		var section = false;
+		
+		$.each(sections, function(i, s){
+			var time = s.from / 1000;
+
+			if (time > player.currentTime()) {
+				section = s;
+				return false;
+			}
+		});
+
+		return section; // At last section
+	};
+
+	var previousSection = function(){
+		var sections = points_data;
+		var section = false;
+		
+		$.each(sections.reverse(), function(i, s){
+			var time = s.from / 1000;
+
+			if (time < player.currentTime()) {
+				section = s;
+				return false;
+			}
+		});
+
+		return section; // At first section
+	};
+
 	var trackTime = function(){
 		var player = this;
 		var player_time = Math.round(player.currentTime() * 1000);
@@ -35,39 +120,12 @@ _V_("video").ready(function(){
 			$.each(points_data, function(i, s){
 				if (s.from <= player_time && s.to >= player_time) {
 					if (!in_section) {
-						// Entering section
-						cameraFlash();
-						player.pause();
- 						in_section = i + 1; // Avoid 0 base issue
-
-						$.each(s.points, function(j, p){
-							if ($('#point-' + p.id).length == 0) {
-								$('#video').append('<a href="#" class="point" id="point-' + p.id + '" data-popup="popup-' + p.id + '">&#10133;</a>');
-								$('#video').append('<div class="popup" id="popup-' + p.id + '"></div>');
-
-								$('#point-' + p.id).css({
-									top: p.y,
-									left: p.x
-								});
-
-								$('#popup-' + p.id).html(p.name).hide();
-								$('#popup-' + p.id).append('<a class="btn" href="#">Buy</a>');
-							}
-						});
-
-						$('.video-skin').append('<span class="countdown"><span class="bar"></span></span>');
-
-						counter = setInterval(timer, 25);
+						enterSection(s);
 					} else {
-						// In section
+						inSection(s);
 					}
-				} else if (in_section == i + 1) {
-					// Leaving section
-					in_section = false;
-
-					$('.point').fadeOut(150, function(){
-						$(this).remove();
-					});
+				} else if (in_section == s.from) {
+					leaveSection(s);
 				}
 			});
 		}
@@ -125,8 +183,12 @@ _V_("video").ready(function(){
 	player.addEvent("timeupdate", trackTime);
 	player.addEvent("timeupdate", paintTimelineSections); // Needs video to be playing to get duration
 	player.addEvent("play", removePopups);
-	player.addEvent("play", removePopups);
+	player.addEvent("play", killCountdown);
 
+	$('#video .vjs-play-control').wrap('<div class="vjs-direction-control" />');
+	$('#video .vjs-play-control').before('<div class="vjs-prev-control"><div><span class="vjs-control-text">Previous</span></div></div>');
+	$('#video .vjs-play-control').after('<div class="vjs-next-control"><div><span class="vjs-control-text">Next</span></div></div>');
+	
 	$('#video').append('<div class="overlay"></div>');
 	$('#video').on('click', '.point', function(e){
 		e.preventDefault();
@@ -156,4 +218,16 @@ _V_("video").ready(function(){
 
 		player.currentTime($self.attr('data-jump'));
 	});
+
+	$('.vjs-next-control span').bind("click", function(){
+		if (nextSection()) {
+			jumpToSection(nextSection());
+		}
+	});
+
+	$('.vjs-prev-control span').bind("click", function(){
+		if (previousSection()) {
+			jumpToSection(previousSection());
+		}
+	});	
 });
