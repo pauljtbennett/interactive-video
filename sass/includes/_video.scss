@@ -49,9 +49,9 @@ video {
 				@include span-columns(11);
 				@include omega;
 				@include at-breakpoint($mobile) {
-					@include span-columns(11);
-					@include remove-omega;
 					@include set-container-width;
+					@include span-columns(2);
+					@include remove-omega;
 				}
 
 				.vjs-progress-holder {
@@ -94,25 +94,58 @@ video {
 				}
 			}
 
-			&.vjs-play-control {
-				@include span-columns(1);
-				@include at-breakpoint($mobile) {
-					@include span-columns(1);
-					@include omega;
-					@include set-container-width;
-				}
-
+			&.vjs-direction-control {
 				margin-top: 10px;
 
-				> div { text-align: center; }
-
-				.vjs-control-text {
-					&:after { content: "\25B6"; }
+				@include container;
+				@include span-columns(1);
+				@include at-breakpoint($mobile) {
+					@include set-container-width;
+					@include span-columns(1);
+					@include omega;
 				}
 
-				&.vjs-playing {
+				.vjs-play-control,
+				.vjs-prev-control,
+				.vjs-next-control {
+					@include span-columns(4);
+
+					height: 1px; // Seems to fix layout
+					text-align: center;
+				}
+
+				.vjs-play-control {
 					.vjs-control-text {
-						&:after { content: "\2016"; }
+						&:after { content: "\25B6"; }
+					}
+
+					&.vjs-playing {
+						.vjs-control-text {
+							&:after { content: "\2016"; }
+						}
+					}
+				}
+
+				.vjs-prev-control {
+					.vjs-control-text {
+						&:after { content: "\23EA"; }
+					}
+				}
+
+				.vjs-next-control {
+					@include omega;
+
+					.vjs-control-text {
+						&:after { content: "\23E9"; }
+					}
+				}
+
+				.vjs-prev-control,
+				.vjs-next-control {
+					display: none;
+
+					@include at-breakpoint($mobile) {
+						display: block;
 					}
 				}
 			}

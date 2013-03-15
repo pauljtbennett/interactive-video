@@ -103,18 +103,24 @@ video { max-width: 960px; width: 100%; height: auto; margin-left: -10px; }
 .video-skin .vjs-controls > div .vjs-control-text:after { display: block; margin-top: -5px; font-size: 2.4em; text-indent: 0; line-height: 0; outline: none; cursor: pointer; }
 .video-skin .vjs-controls > div:last-child { margin-right: 0; }
 .video-skin .vjs-controls > div.vjs-progress-control { width: 91.48936%; float: left; margin-right: 2.12766%; display: inline; float: right; margin-right: 0; #margin-left: -20px; display: inline; }
-@media (max-width: 480px) { .video-skin .vjs-controls > div.vjs-progress-control { width: 390.90909%; float: left; margin-right: 9.09091%; float: left; margin-right: 9.09091%; max-width: 240px; } }
+@media (max-width: 480px) { .video-skin .vjs-controls > div.vjs-progress-control { max-width: 240px; width: 63.63636%; float: left; margin-right: 9.09091%; float: left; margin-right: 9.09091%; } }
 .video-skin .vjs-controls > div.vjs-progress-control .vjs-progress-holder { position: relative; width: 100%; height: 11px; }
 .video-skin .vjs-controls > div.vjs-progress-control .vjs-progress-holder > div { position: absolute; top: 0; left: 0; height: 1px; }
 .video-skin .vjs-controls > div.vjs-progress-control .vjs-progress-holder > div.vjs-load-progress { top: 5px; background: #ddd; }
 .video-skin .vjs-controls > div.vjs-progress-control .vjs-progress-holder > div.vjs-play-progress { height: 11px; border-right: 3px solid #bf2534; background: -webkit-gradient(linear, 50% 0%, 50% 7, color-stop(0%, #ffffff), color-stop(57.14286%, #ffffff), color-stop(57.14286%, #333333), color-stop(100%, #333333), color-stop(100%, #ffffff)); background: -webkit-linear-gradient(#ffffff, #ffffff 4px, #333333 4px, #333333 7px, #ffffff 7px); background: -moz-linear-gradient(#ffffff, #ffffff 4px, #333333 4px, #333333 7px, #ffffff 7px); background: -o-linear-gradient(#ffffff, #ffffff 4px, #333333 4px, #333333 7px, #ffffff 7px); background: linear-gradient(#ffffff, #ffffff 4px, #333333 4px, #333333 7px, #ffffff 7px); }
 .video-skin .vjs-controls > div.vjs-progress-control .vjs-progress-holder > div span { display: none; }
 .video-skin .vjs-controls > div.vjs-progress-control .vjs-progress-holder .progress-point { position: absolute; display: inline-block; padding: 0 1px 0 2px; font-family: "entypo"; font-size: 3em; font-weight: bold; color: #ddd; background: #fff; line-height: 12px; }
-.video-skin .vjs-controls > div.vjs-play-control { width: 6.38298%; float: left; margin-right: 2.12766%; display: inline; margin-top: 10px; }
-@media (max-width: 480px) { .video-skin .vjs-controls > div.vjs-play-control { width: 27.27273%; float: left; margin-right: 9.09091%; float: right; margin-right: 0; max-width: 240px; } }
-.video-skin .vjs-controls > div.vjs-play-control > div { text-align: center; }
-.video-skin .vjs-controls > div.vjs-play-control .vjs-control-text:after { content: "\25B6"; }
-.video-skin .vjs-controls > div.vjs-play-control.vjs-playing .vjs-control-text:after { content: "\2016"; }
+.video-skin .vjs-controls > div.vjs-direction-control { margin-top: 10px; *zoom: 1; max-width: 960px; _width: 960px; padding-left: 10px; padding-right: 10px; margin-left: auto; margin-right: auto; width: 6.38298%; float: left; margin-right: 2.12766%; display: inline; }
+.video-skin .vjs-controls > div.vjs-direction-control:after { content: ""; display: table; clear: both; }
+@media (max-width: 480px) { .video-skin .vjs-controls > div.vjs-direction-control { max-width: 240px; width: 27.27273%; float: left; margin-right: 9.09091%; float: right; margin-right: 0; } }
+.video-skin .vjs-controls > div.vjs-direction-control .vjs-play-control, .video-skin .vjs-controls > div.vjs-direction-control .vjs-prev-control, .video-skin .vjs-controls > div.vjs-direction-control .vjs-next-control { width: 31.91489%; float: left; margin-right: 2.12766%; display: inline; height: 1px; text-align: center; }
+.video-skin .vjs-controls > div.vjs-direction-control .vjs-play-control .vjs-control-text:after { content: "\25B6"; }
+.video-skin .vjs-controls > div.vjs-direction-control .vjs-play-control.vjs-playing .vjs-control-text:after { content: "\2016"; }
+.video-skin .vjs-controls > div.vjs-direction-control .vjs-prev-control .vjs-control-text:after { content: "\23EA"; }
+.video-skin .vjs-controls > div.vjs-direction-control .vjs-next-control { float: right; margin-right: 0; #margin-left: -20px; display: inline; }
+.video-skin .vjs-controls > div.vjs-direction-control .vjs-next-control .vjs-control-text:after { content: "\23E9"; }
+.video-skin .vjs-controls > div.vjs-direction-control .vjs-prev-control, .video-skin .vjs-controls > div.vjs-direction-control .vjs-next-control { display: none; }
+@media (max-width: 480px) { .video-skin .vjs-controls > div.vjs-direction-control .vjs-prev-control, .video-skin .vjs-controls > div.vjs-direction-control .vjs-next-control { display: block; } }
 .video-skin .vjs-controls > div.vjs-current-time, .video-skin .vjs-controls > div.vjs-time-divider, .video-skin .vjs-controls > div.vjs-duration, .video-skin .vjs-controls > div.vjs-remaining-time, .video-skin .vjs-controls > div.vjs-volume-control, .video-skin .vjs-controls > div.vjs-mute-control { display: none; }
 .video-skin .point { position: absolute; width: 22px; height: 22px; padding-left: 1px; background: #fff; border: 1px solid #eeeeee; font-family: "entypo"; font-size: 3em; font-weight: bold; text-align: center; line-height: 21px; color: #777; -webkit-border-radius: 11px; -moz-border-radius: 11px; -ms-border-radius: 11px; -o-border-radius: 11px; border-radius: 11px; }
 .video-skin .point:hover { color: #bf2534; }
